@@ -1,0 +1,6 @@
+/Users/peterli/Documents/Dev Code Camp/Projects/Sweepstakes/Sweepstakes/obj/x86/Debug/Sweepstakes.csprojResolveAssemblyReference.cache
+/Users/peterli/Documents/Dev Code Camp/Projects/Sweepstakes/Sweepstakes/obj/x86/Debug/Sweepstakes.csproj.CoreCompileInputs.cache
+/Users/peterli/Documents/Dev Code Camp/Projects/Sweepstakes/Sweepstakes/bin/Debug/Sweepstakes.exe
+/Users/peterli/Documents/Dev Code Camp/Projects/Sweepstakes/Sweepstakes/bin/Debug/Sweepstakes.pdb
+/Users/peterli/Documents/Dev Code Camp/Projects/Sweepstakes/Sweepstakes/obj/x86/Debug/Sweepstakes.exe
+/Users/peterli/Documents/Dev Code Camp/Projects/Sweepstakes/Sweepstakes/obj/x86/Debug/Sweepstakes.pdb
