@@ -6,61 +6,30 @@ namespace Sweepstakes
     public class Sweepstakes
     {
         public int registrationNumber { get; set; }
-        Dictionary<int, Contestant> contestantInfo = new Dictionary<int, Contestant>();
+        public Dictionary<int, Contestant> contestantInfo = new Dictionary<int, Contestant>();
 
         public Sweepstakes()
         {
-            Interface();
             registrationNumber = 1;
         }
 
-        public void Interface()
-        {
-            List<string> menu = new List<string>();
-            int menuChoice;
-
-            menu.Add("1. Register contestant");
-            menu.Add("2. Get contestant information");
-            menu.Add("3. PLay");
-            Console.WriteLine("Welcome to sweepstakes");
-            for (int i = 0; i < menu.Count; i++)
-            {
-                Console.WriteLine(menu[i]);
-            }
-            while (!int.TryParse(Console.ReadLine(), out menuChoice))
-            {
-                Console.WriteLine("Please input something valid");
-                Console.WriteLine("Choose a menu option");
-            }
-
-            switch(menuChoice)
-            {
-                case 1:
-                    RegisterContestant();
-                    break;
-            }
-        }
-
-
         public void RegisterContestant()
         {
-            string firstName;
-            string lastName;
-            string email;
             Contestant contestant = new Contestant();
 
             Console.WriteLine("First name: ");
-            firstName = Console.ReadLine();
+            contestant.firstName = Console.ReadLine();
             Console.WriteLine("Last name: ");
-            lastName = Console.ReadLine();
+            contestant.lastName = Console.ReadLine();
             Console.WriteLine("Email: ");
-            email = Console.ReadLine();
-
-            contestant.firstName = firstName;
-            contestant.lastName = lastName;
-            contestant.email = email;
-
-            contestant.AddContestant();
+            contestant.email = Console.ReadLine();
+            contestant.registrationNumber = registrationNumber;
+            contestantInfo.Add(contestant.registrationNumber, contestant);
+            registrationNumber++;
+            Console.WriteLine("");
+            Console.WriteLine($"Information received: First name: {contestant.firstName} \nLast name: {contestant.lastName} \nEmail address: {contestant.email} \nRegistration:{contestant.registrationNumber}");
+            Console.WriteLine("");
+            UserInterface.getContestant(contestant);
         }
 
         public string PickWinner()
@@ -71,6 +40,7 @@ namespace Sweepstakes
         public void PrintContestantInfo(Contestant contestant)
         {
             
+            Console.WriteLine("This is it");
         }
     }
 }
