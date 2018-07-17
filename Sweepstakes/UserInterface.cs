@@ -8,15 +8,18 @@ namespace Sweepstakes
         public UserInterface()
         {
             String userManagerChoice;
+            Sweepstakes sweepstakes = new Sweepstakes();
+            Console.WriteLine("Queue or Stack?");
+            userManagerChoice = Console.ReadLine();
+            userManagerChoice.ToLower();
 
             do
             {
-                Console.WriteLine("Queue or Stack?");
-                userManagerChoice = Console.ReadLine();
-                userManagerChoice.ToLower();
                 if(userManagerChoice == ""){
                     Console.WriteLine("Please enter something");
+                    userManagerChoice = Console.ReadLine();
                 } else if (userManagerChoice != "queue" && userManagerChoice != "stack"){
+                    userManagerChoice = Console.ReadLine();
                     Console.WriteLine("Please enter something valid");
                 }
             } while (userManagerChoice != null && userManagerChoice != "queue" && userManagerChoice != "stack");
@@ -28,13 +31,15 @@ namespace Sweepstakes
             }
         }
 
+        Contestant contestant = new Contestant();
+
         public void MainMenu(Sweepstakes sweepstakes){
+            Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
             List<string> menu = new List<string>();
             int menuChoice;
 
             menu.Add("1. Register contestant");
-            menu.Add("2. Get contestant information");
-            menu.Add("3. Play");
+            menu.Add("2. Play");
             Console.WriteLine("Welcome to sweepstakes");
 
             for (int i = 0; i < menu.Count; i++)
@@ -54,7 +59,9 @@ namespace Sweepstakes
                     MainMenu(sweepstakes);
                     break;
                 case 2:
-                    
+                    string winnerInfo = sweepstakes.PickWinner();
+                    Console.WriteLine(winnerInfo);
+                    MainMenu(sweepstakes);
                     break;
             }
         }

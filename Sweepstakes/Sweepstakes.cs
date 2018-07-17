@@ -29,18 +29,35 @@ namespace Sweepstakes
             Console.WriteLine("");
             Console.WriteLine($"Information received: First name: {contestant.firstName} \nLast name: {contestant.lastName} \nEmail address: {contestant.email} \nRegistration:{contestant.registrationNumber}");
             Console.WriteLine("");
-            UserInterface.getContestant(contestant);
+            PrintContestantInfo(contestant);
         }
 
         public string PickWinner()
         {
-            return "hello";
+            Random random = new Random();
+            int randomContestant = random.Next(1, contestantInfo.Count + 1);
+
+            Console.WriteLine(randomContestant);
+            if(contestantInfo.ContainsKey(randomContestant)){
+                return contestantInfo[randomContestant].firstName + " " + contestantInfo[randomContestant].lastName;
+            } else {
+                return "Error!";
+            }
+
         }
 
         public void PrintContestantInfo(Contestant contestant)
         {
-            
-            Console.WriteLine("This is it");
+            string userConfirmation;
+            Console.WriteLine("Does this look correct?");
+            userConfirmation = Console.ReadLine();
+            userConfirmation.ToLower();
+            if(userConfirmation == "yes"){
+                Console.WriteLine("Your information has been entered");
+                return;
+            } else {
+                RegisterContestant();
+            }
         }
     }
 }

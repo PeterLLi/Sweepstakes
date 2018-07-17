@@ -6,20 +6,11 @@ namespace Sweepstakes
     
     public class SweepstakesQueueManager : ISweepstakesManager
     {
+        public Queue<Sweepstakes> sweepstakes;
+
         public SweepstakesQueueManager()
         {
-            Queue();
-        }
-
-        public void Queue(){
-            Queue<string> QueueSweepstakes = new Queue<string>();
-            QueueSweepstakes.Enqueue("Hello");
-            QueueSweepstakes.Enqueue("Hello");
-            QueueSweepstakes.Enqueue("Hello");
-
-            foreach(String queueWord in QueueSweepstakes){
-                Console.WriteLine(queueWord);
-            }
+            sweepstakes = new Queue<Sweepstakes>();
         }
 
         public Sweepstakes GetSweepstakes()
