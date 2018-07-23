@@ -7,12 +7,16 @@ namespace Sweepstakes
     {
         public Stack<Sweepstakes> sweetstakes;
 
-        public SweepstakesStackManager(){
+        public SweepstakesStackManager()
+        {
             sweetstakes = new Stack<Sweepstakes>();
         }
 
-        public Sweepstakes GetSweepstakes(){
-            Sweepstakes sweepstakes = new Sweepstakes();
+        public Sweepstakes GetSweepstakes()
+        {
+            Contestant contestant = new Contestant();
+            string name = contestant.firstName;
+            Sweepstakes sweepstakes = new Sweepstakes(name);
             return sweepstakes;
         }
 

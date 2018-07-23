@@ -8,15 +8,15 @@ namespace Sweepstakes
         public int registrationNumber { get; set; }
         public Dictionary<int, Contestant> contestantInfo = new Dictionary<int, Contestant>();
 
-        public Sweepstakes()
+        public Sweepstakes(string name)
         {
             registrationNumber = 1;
+
         }
 
-        public void RegisterContestant()
+        public void addContestant()
         {
             Contestant contestant = new Contestant();
-
             Console.WriteLine("First name: ");
             contestant.firstName = Console.ReadLine();
             Console.WriteLine("Last name: ");
@@ -24,10 +24,16 @@ namespace Sweepstakes
             Console.WriteLine("Email: ");
             contestant.email = Console.ReadLine();
             contestant.registrationNumber = registrationNumber;
-            contestantInfo.Add(contestant.registrationNumber, contestant);
             registrationNumber++;
+            string name = contestant.firstName;
+            RegisterContestant(contestant);
+        }
+
+        public void RegisterContestant(Contestant contestant)
+        {
             Console.WriteLine("");
             Console.WriteLine($"Information received: First name: {contestant.firstName} \nLast name: {contestant.lastName} \nEmail address: {contestant.email} \nRegistration:{contestant.registrationNumber}");
+            contestantInfo.Add(contestant.registrationNumber, contestant);
             Console.WriteLine("");
             PrintContestantInfo(contestant);
         }
@@ -36,11 +42,10 @@ namespace Sweepstakes
         {
             Random random = new Random();
             int randomContestant = random.Next(1, contestantInfo.Count + 1);
-
-            Console.WriteLine(randomContestant);
             if(contestantInfo.ContainsKey(randomContestant)){
                 return contestantInfo[randomContestant].firstName + " " + contestantInfo[randomContestant].lastName;
             } else {
+                Console.WriteLine(randomContestant);
                 return "Error!";
             }
 
@@ -56,7 +61,7 @@ namespace Sweepstakes
                 Console.WriteLine("Your information has been entered");
                 return;
             } else {
-                RegisterContestant();
+                RegisterContestant(contestant);
             }
         }
     }

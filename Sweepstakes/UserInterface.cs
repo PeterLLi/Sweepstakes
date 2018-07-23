@@ -5,10 +5,13 @@ namespace Sweepstakes
 {
     public class UserInterface
     {
+        public int registrationNumber { get; set; }
+
         public UserInterface()
         {
+            registrationNumber = 1;
             String userManagerChoice;
-            Sweepstakes sweepstakes = new Sweepstakes();
+
             Console.WriteLine("Queue or Stack?");
             userManagerChoice = Console.ReadLine();
             userManagerChoice.ToLower();
@@ -30,8 +33,6 @@ namespace Sweepstakes
                 Factory.CreateStack();
             }
         }
-
-        Contestant contestant = new Contestant();
 
         public void MainMenu(Sweepstakes sweepstakes){
             Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
@@ -55,7 +56,7 @@ namespace Sweepstakes
             switch (menuChoice)
             {
                 case 1:
-                    sweepstakes.RegisterContestant();
+                    sweepstakes.addContestant();
                     MainMenu(sweepstakes);
                     break;
                 case 2:
@@ -65,5 +66,7 @@ namespace Sweepstakes
                     break;
             }
         }
+
+
     }
 }

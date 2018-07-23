@@ -2,15 +2,15 @@
   <MonoDevelop.Ide.ItemProperties.Sweepstakes PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Sweepstakes/Sweepstakes.cs">
     <Files>
-      <File FileName="Sweepstakes/Program.cs" Line="12" Column="49" />
-      <File FileName="Sweepstakes/UserInterface.cs" Line="63" Column="51" />
-      <File FileName="Sweepstakes/Sweepstakes.cs" Line="38" Column="75" />
+      <File FileName="Sweepstakes/Program.cs" Line="10" Column="27" />
+      <File FileName="Sweepstakes/UserInterface.cs" Line="65" Column="41" />
+      <File FileName="Sweepstakes/Sweepstakes.cs" Line="7" Column="6" />
       <File FileName="Sweepstakes/Contestant.cs" Line="6" Column="6" />
       <File FileName="Sweepstakes/Factory.cs" Line="13" Column="50" />
       <File FileName="Sweepstakes/ISweepstakesManager.cs" Line="8" Column="6" />
-      <File FileName="Sweepstakes/SweepstakesStackManager.cs" Line="1" Column="14" />
-      <File FileName="Sweepstakes/SweepstakesQueueManager.cs" Line="17" Column="10" />
-      <File FileName="Sweepstakes/MarketingFirm.cs" Line="13" Column="6" />
+      <File FileName="Sweepstakes/SweepstakesStackManager.cs" Line="16" Column="9" />
+      <File FileName="Sweepstakes/SweepstakesQueueManager.cs" Line="7" Column="6" />
+      <File FileName="Sweepstakes/MarketingFirm.cs" Line="10" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

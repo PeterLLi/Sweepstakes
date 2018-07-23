@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace Sweepstakes
 {
-    
     public class SweepstakesQueueManager : ISweepstakesManager
     {
         public Queue<Sweepstakes> sweepstakes;
@@ -15,7 +14,9 @@ namespace Sweepstakes
 
         public Sweepstakes GetSweepstakes()
         {
-            Sweepstakes sweepstakes = new Sweepstakes();
+            Contestant contestant = new Contestant();
+            string name = contestant.firstName;
+            Sweepstakes sweepstakes = new Sweepstakes(name);
             return sweepstakes;
         }
 

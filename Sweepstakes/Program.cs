@@ -7,8 +7,8 @@ namespace Sweepstakes
         public static void Main(string[] args)
         {
             UserInterface userInterface = new UserInterface();
-            Sweepstakes sweepstakes = new Sweepstakes();
-
+            string name = "user";
+            Sweepstakes sweepstakes = new Sweepstakes(name);
             userInterface.MainMenu(sweepstakes);
         }
     }
